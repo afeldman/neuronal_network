@@ -103,9 +103,24 @@ double updateWeights(double weights[][ARRAYSIZE], double value[],double expected
 		weights[i][h] += delta;
 	    }
 
-	    double thresholddelta = LEARNINGRATE * -1 * hiddenErrorGradient;
+	    double thresholdDelta = LEARNINGRATE * -1 * hiddenErrorGradient;
 	    
-	    
+	    threshold[h] += thresholdDelta;
 	}
+	double delta = LEARNINGRATE * -1 * outputErrorGradient;
+	threshold[o] += delta;
     }
+    return sumOfSquaredErrors;
+}
+
+void displayNetwork(double values[], double sumOfSquaredErrors){
+    static int counter = 0;
+    if((counter % 4) == 0){
+	printf("--------------------------------------------------------------");
+    }
+    printf("%8.4f|", values[1]);
+    printf("%8.4f|", values[2]);
+    printf("%8.4f|", values[5]);
+    printf("\terr: %8.5f\n", sumOfSquaredErrors);
+    ++counter;
 }
