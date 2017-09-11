@@ -42,6 +42,7 @@ void trainingExample(double values[], double expectedValues[]){
 	    values[1] = 0;
 	    values[2] = 1;
 	    expectedvalues[5] = 1;
+            break;
 	case 2:
 	    values[1] = 1;
 	    values[2] = 0;
