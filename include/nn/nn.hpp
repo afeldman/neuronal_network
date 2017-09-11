@@ -1,5 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
+#pragma once
+
+#include <cstdio>
+#include <cstdlib>
 #include <cmath>
 
 const int NUMINPUTNODES = 2;
